@@ -10,6 +10,18 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	//set up click listener for friend names
+	$(".friendName").click(replaceName);
+}
+
+/*
+ * function to be called when a name is clicked - replaces the name with an anagram.
+ */
+function replaceName(e){
+	e.preventDefault();
+	var oldName = $(this).text();
+	//reset text based on anagram
+	$(this).text(anagrammedName(oldName));
 }
 
 function anagrammedName(name) {
